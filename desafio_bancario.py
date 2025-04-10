@@ -12,7 +12,7 @@ menu = """
 saldo = 0
 poupanca = 0
 investimentos = 0
-depositado = 1
+depositado = 0
 limite = 500
 extrato = ""
 numero_saques = 0
@@ -82,7 +82,7 @@ while True:
             print("Opção inválida, por favor selecione novamente a operação desejada.") 
     
     elif opcao == "i":
-        if saldo >= float(30% depositado):
+        if depositado != 0 and saldo >= float(30% depositado):
             escolha = input("Você é elegível para investir, deseja investir ou retirar: ")
             if escolha == "investir":
                 investimento = float(input("Qual é o valor do investimento: "))
