@@ -12,7 +12,7 @@ menu = """
 saldo = 0
 poupanca = 0
 investimentos = 0
-depositado = 0
+depositado = 1
 limite = 500
 extrato = ""
 numero_saques = 0
@@ -62,8 +62,8 @@ while True:
     elif opcao == "p":
         escolha = input("Deseja sacar ou depositar: ")
 
-        if escolha = "sacar":
-            saque_poupanca = float(input("Valor do saque_poupanca: ")):
+        if escolha == "sacar":
+            saque_poupanca = float(input("Valor do saque_poupanca: "))
             if saque_poupanca <= poupanca:
                 poupanca -= saque_poupanca
                 saldo += saque_poupanca
@@ -71,8 +71,8 @@ while True:
             else:
                 print("O valor informado excede o valor presente na poupança.")                
             
-        elif escolha = "depositar":
-            deposito_poupanca = float(input("Valor do deposito_poupanca: ")):
+        elif escolha == "depositar":
+            deposito_poupanca = float(input("Valor do deposito_poupanca: "))
             if deposito_poupanca <= saldo:
                 saldo -= deposito_poupanca
                 poupanca += deposito_poupanca
@@ -82,20 +82,20 @@ while True:
             print("Opção inválida, por favor selecione novamente a operação desejada.") 
     
     elif opcao == "i":
-        if saldo >= (30% depositado):
-            escolha = input("Você é elegível para investir, deseja investir ou retirar: "):
-            if escolha = "investir":
-                investimento = float(input("Qual é o valor do investimento: ")):
-                    if investimento <= saldo:
-                        saldo -= investimento
-                        investimentos += investimento
-                        extrato += f"Investimento: R$ {investimento:.2f}\n"
+        if saldo >= float(30% depositado):
+            escolha = input("Você é elegível para investir, deseja investir ou retirar: ")
+            if escolha == "investir":
+                investimento = float(input("Qual é o valor do investimento: "))
+                if investimento <= saldo:
+                    saldo -= investimento
+                    investimentos += investimento
+                    extrato += f"Investimento: R$ {investimento:.2f}\n"
                     
-                    else:
-                        print("O valor do investimento excede o do saldo, não foi possível realizar a operação.") 
+                else:
+                    print("O valor do investimento excede o do saldo, não foi possível realizar a operação.") 
             
-            elif escolha = "retirar":
-                retirada_investimento = float(input("Qual é o valor da retirada: ")):
+            elif escolha == "retirar":
+                retirada_investimento = float(input("Qual é o valor da retirada: "))
                 if retirada_investimento <= investimentos:
                     investimentos -= retirada_investimento
                     saldo += retirada_investimento
@@ -106,14 +106,6 @@ while True:
             
             else:
                 print("Opção inválida, favor escolher outra opção.")
-
-
-
-
-
-
-   
-
 
 
 
@@ -129,7 +121,7 @@ while True:
     
     elif opcao == "q":
         break
-
+    
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
 
